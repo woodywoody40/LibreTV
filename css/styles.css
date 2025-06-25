@@ -1,4 +1,4 @@
-/* 
+/*
 LibreTV 全局样式
 包含多个页面共享的基础样式
 对于特定页面的样式，请参考:
@@ -37,31 +37,31 @@ LibreTV 全局样式
 }
 
 :root {
-    /* 赛博影视主题配色方案 - 柔和版 */
-    --primary-color: #3897a8;       /* 霓虹蓝主色调 */
-    --primary-light: #33d6ff;       /* 浅霓虹蓝变体 */
-    --secondary-color: #0f1622;     /* 深蓝黑背景色 */
-    --accent-color: #be6161;        /* 霓虹粉强调色 */
-    --text-color: #e6f2ff;          /* 柔和的蓝白色文本 */
-    --text-muted: #8599b2;          /* 淡蓝灰色次级文本 */
-    --border-color: rgba(0, 204, 255, 0.15);
-    --page-gradient-start: #0f1622; /* 深蓝黑起始色 */
-    --page-gradient-end: #192231;   /* 深靛蓝结束色 */
-    --card-gradient-start: #121b29; /* 卡片起始色 */
-    --card-gradient-end: #1c2939;   /* 卡片结束色 */
-    --card-accent: rgba(0, 204, 255, 0.12); /* 霓虹蓝卡片强调色 */
-    --card-hover-border: rgba(0, 204, 255, 0.5); /* 悬停边框颜色 */
+    /* 莫蘭迪色系 - 深色主题 */
+    --primary-color: #5B84A7;       /* 莫蘭迪藍 - 主色 */
+    --primary-light: #7BA0B7;       /* 莫蘭迪淺藍 */
+    --secondary-color: #1A1A1D;     /* 深黑背景 */
+    --accent-color: #A49393;        /* 莫蘭迪灰粉 - 强调色 */
+    --text-color: #E0E0E0;          /* 淺灰色文本 */
+    --text-muted: #8F8F8F;          /* 暗淡灰色次级文本 */
+    --border-color: rgba(91, 132, 167, 0.25); /* 莫蘭迪藍邊框 */
+    --page-gradient-start: #1A1A1D; /* 深黑起始色 */
+    --page-gradient-end: #28282B;   /* 稍淺黑結束色 */
+    --card-gradient-start: #212124; /* 卡片起始色 */
+    --card-gradient-end: #303033;   /* 卡片結束色 */
+    --card-accent: rgba(91, 132, 167, 0.15); /* 莫蘭迪藍卡片強調色 */
+    --card-hover-border: rgba(91, 132, 167, 0.6); /* 懸停邊框顏色 */
 }
 
 .page-bg {
     background: linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end));
     min-height: 100vh;
-    /* 柔和赛博点状背景 */
-    background-image: 
+    /* 柔和點狀背景，使用莫蘭迪色系 */
+    background-image:
         linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end)),
-        radial-gradient(circle at 25px 25px, rgba(0, 204, 255, 0.04) 2px, transparent 3px),
-        radial-gradient(circle at 75px 75px, rgba(255, 60, 120, 0.02) 1px, transparent 2px),
-        radial-gradient(circle at 50px 50px, rgba(150, 255, 250, 0.015) 1px, transparent 2px);
+        radial-gradient(circle at 25px 25px, rgba(91, 132, 167, 0.08) 2px, transparent 3px), /* 莫蘭迪藍點 */
+        radial-gradient(circle at 75px 75px, rgba(164, 147, 147, 0.04) 1px, transparent 2px), /* 莫蘭迪灰粉點 */
+        radial-gradient(circle at 50px 50px, rgba(120, 150, 170, 0.03) 1px, transparent 2px); /* 莫蘭迪中間色點 */
     background-blend-mode: normal;
     background-size: cover, 100px 100px, 50px 50px, 75px 75px;
 }
@@ -236,11 +236,11 @@ body {
         flex-direction: column;
         min-height: 100vh;
     }
-    
+
     .container {
         flex: 1;
     }
-    
+
     .footer {
         margin-top: auto;
     }
@@ -257,7 +257,7 @@ body {
     .card-hover h3 {
         min-height: 2.5rem;
     }
-    
+
     .card-hover .flex-grow {
         min-height: 80px;
     }
@@ -284,20 +284,20 @@ body {
 #modal > div {
     background: linear-gradient(135deg, var(--card-gradient-start), var(--card-gradient-end));
     border: 1px solid var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 204, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(91, 132, 167, 0.1); /* 使用莫蘭迪藍 */
     border-radius: 8px;
 }
 
 #episodesGrid button {
-    background: rgba(0, 204, 255, 0.08);
-    border: 1px solid rgba(0, 204, 255, 0.2);
+    background: rgba(91, 132, 167, 0.08); /* 莫蘭迪藍 */
+    border: 1px solid rgba(91, 132, 167, 0.2); /* 莫蘭迪藍 */
     transition: all 0.2s ease;
 }
 
 #episodesGrid button:hover {
-    background: rgba(0, 204, 255, 0.15);
+    background: rgba(91, 132, 167, 0.15); /* 莫蘭迪藍 */
     border-color: var(--primary-color);
-    box-shadow: 0 0 8px rgba(0, 204, 255, 0.3);
+    box-shadow: 0 0 8px rgba(91, 132, 167, 0.3); /* 莫蘭迪藍 */
 }
 
 #yellowFilterToggle:checked + .toggle-bg {
@@ -310,7 +310,7 @@ body {
 
 #yellowFilterToggle:focus + .toggle-bg,
 #yellowFilterToggle:hover + .toggle-bg {
-    box-shadow: 0 0 0 2px rgba(0, 204, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(91, 132, 167, 0.3); /* 莫蘭迪藍 */
 }
 
 /* 添加广告过滤开关的CSS */
@@ -324,7 +324,7 @@ body {
 
 #adFilterToggle:focus + .toggle-bg,
 #adFilterToggle:hover + .toggle-bg {
-    box-shadow: 0 0 0 2px rgba(0, 204, 255, 0.3);
+    box-shadow: 0 0 0 2px rgba(91, 132, 167, 0.3); /* 莫蘭迪藍 */
 }
 
 .toggle-dot {
@@ -337,11 +337,11 @@ body {
 }
 
 #yellowFilterToggle:checked ~ .toggle-dot {
-    box-shadow: 0 2px 4px rgba(0, 204, 255, 0.3);
+    box-shadow: 0 2px 4px rgba(91, 132, 167, 0.3); /* 莫蘭迪藍 */
 }
 
 #adFilterToggle:checked ~ .toggle-dot {
-    box-shadow: 0 2px 4px rgba(0, 204, 255, 0.3);
+    box-shadow: 0 2px 4px rgba(91, 132, 167, 0.3); /* 莫蘭迪藍 */
 }
 
 /* 添加API复选框样式 */
@@ -455,7 +455,7 @@ body {
 
 /* 成人内容API标记样式 */
 .api-adult + label {
-    color: #ff6b8b !important;
+    color: #FF7B9D !important; /* 更柔和的粉色 */
 }
 
 /* 添加警告图标和标签样式 */
@@ -463,7 +463,7 @@ body {
     display: inline-flex;
     align-items: center;
     margin-left: 0.25rem;
-    color: #ff6b8b;
+    color: #FF7B9D; /* 更柔和的粉色 */
 }
 
 .adult-warning svg {
@@ -485,14 +485,14 @@ body {
     padding: 0.25rem 0;
     margin-top: 0.5rem;
     border-top: 1px solid #333;
-    color: #8599b2;
+    color: #8F8F8F; /* 使用 text-muted */
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .api-group-title.adult {
-    color: #ff6b8b;
+    color: #FF7B9D; /* 更柔和的粉色 */
 }
 
 /* 过滤器禁用样式 - 改进版本 */
@@ -527,7 +527,7 @@ body {
 
 /* 改进过滤器禁用样式 */
 .filter-disabled .filter-description {
-    color: #ff6b8b !important;
+    color: #FF7B9D !important; /* 更亮的粉色 */
     font-style: italic;
     font-weight: 500;
 }
@@ -556,7 +556,7 @@ body {
 
 /* 改进过滤器禁用状态下的描述样式 */
 .filter-disabled .filter-description {
-    color: #ff7b9d !important; /* 更亮的粉色 */
+    color: #FF7B9D !important; /* 更亮的粉色 */
     font-style: italic;
     font-weight: 500;
     text-shadow: 0 0 2px rgba(0,0,0,0.8); /* 添加文字阴影提高对比度 */
@@ -576,8 +576,8 @@ body {
 
 /* 警告提示样式改进 */
 .filter-tooltip {
-    background-color: rgba(255, 61, 87, 0.1);
-    border: 1px solid rgba(255, 61, 87, 0.2);
+    background-color: rgba(164, 147, 147, 0.1); /* 使用莫蘭迪灰粉 */
+    border: 1px solid rgba(164, 147, 147, 0.2);
     border-radius: 0.25rem;
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -598,12 +598,12 @@ body {
 
 /* 编辑按钮样式 */
 .custom-api-edit {
-    color: #3b82f6;
+    color: #5B84A7; /* 莫蘭迪藍 */
     transition: color 0.2s ease;
 }
 
 .custom-api-edit:hover {
-    color: #2563eb;
+    color: #7BA0B7; /* 莫蘭迪淺藍 */
 }
 
 /* 自定义API条目样式改进 */
@@ -626,7 +626,7 @@ body {
 .adult-tag {
     display: inline-flex;
     align-items: center;
-    color: #ff6b8b;
+    color: #FF7B9D; /* 更柔和的粉色 */
     font-size: 0.7rem;
     font-weight: 500;
     margin-right: 0.35rem;
@@ -703,15 +703,15 @@ body {
 }
 
 .history-episode {
-    color: #3b82f6;
+    color: #5B84A7; /* 莫蘭迪藍 */
 }
 
 .history-source {
-    color: #10b981;
+    color: #8DAB7C; /* 莫蘭迪綠 */
 }
 
 .history-time {
-    color: #888;
+    color: #8F8F8F; /* 使用 text-muted */
     font-size: 0.7rem; /* 减小字体大小 */
     margin-top: 1px; /* 减小顶部边距 */
 }
@@ -738,7 +738,7 @@ body {
 }
 
 .history-time {
-    color: #888;
+    color: #8F8F8F; /* 使用 text-muted */
     font-size: 0.8rem;
     margin-top: 4px;
 }
@@ -765,13 +765,13 @@ body {
 
 .progress-filled {
     height: 100%;
-    background: linear-gradient(to right, #00ccff, #3b82f6);
+    background: linear-gradient(to right, #5B84A7, #A49393); /* 莫蘭迪藍到灰粉的漸變 */
     border-radius: 2px;
 }
 
 .progress-text {
     font-size: 10px;
-    color: #888;
+    color: #8F8F8F; /* 使用 text-muted */
     text-align: right;
 }
 
@@ -1018,11 +1018,11 @@ body {
         gap: 0.5rem;
         font-size: 0.8rem;
     }
-    
+
     #modal .detail-label {
         min-width: 2.5rem;
     }
-    
+
     #modal .detail-desc-content {
         max-height: 6rem;
         font-size: 0.8rem;
