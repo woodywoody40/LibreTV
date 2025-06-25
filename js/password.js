@@ -25,13 +25,25 @@ window.isPasswordProtected = isPasswordProtected;
 // 统一验证函数
 async function verifyPassword(password, passwordType = 'PASSWORD') {
     try {
-        const correctHash = window.__ENV__?.[passwordType];
-        if (!correctHash) return false;
+        const hashesToCheck = [];
+
+        // 收集要比對的哈希值
+        if (passwordType === 'PASSWORD') {
+            const pwd1 = window.__ENV__?.PASSWORD;
+            const pwd2 = window.__ENV__?.PASSWORD2;
+            if (typeof pwd1 === 'string') hashesToCheck.push(pwd1);
+            if (typeof pwd2 === 'string') hashesToCheck.push(pwd2);
+        } else if (passwordType === 'ADMINPASSWORD') {
+            const adminPwd = window.__ENV__?.ADMINPASSWORD;
+            if (typeof adminPwd === 'string') hashesToCheck.push(adminPwd);
+        }
+
+        if (hashesToCheck.length === 0) return false;
 
         const inputHash = await sha256(password);
-        const isValid = inputHash === correctHash;
+        const matchedHash = hashesToCheck.find(hash => inputHash === hash);
 
-        if (isValid) {
+        if (matchedHash) {
             const storageKey = passwordType === 'PASSWORD'
                 ? PASSWORD_CONFIG.localStorageKey
                 : PASSWORD_CONFIG.adminLocalStorageKey;
@@ -39,15 +51,19 @@ async function verifyPassword(password, passwordType = 'PASSWORD') {
             localStorage.setItem(storageKey, JSON.stringify({
                 verified: true,
                 timestamp: Date.now(),
-                passwordHash: correctHash
+                passwordHash: matchedHash
             }));
+
+            return true;
         }
-        return isValid;
+
+        return false;
     } catch (error) {
         console.error(`验证${passwordType}密码时出错:`, error);
         return false;
     }
 }
+
 
 // 统一验证状态检查
 function isVerified(passwordType = 'PASSWORD') {
